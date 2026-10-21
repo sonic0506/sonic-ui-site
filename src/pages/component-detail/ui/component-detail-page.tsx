@@ -11,24 +11,32 @@ import {
 import { AccordionDoc } from './accordion-doc';
 import { AlertDialogDoc } from './alert-dialog-doc';
 import { AvatarDoc } from './avatar-doc';
+import { BadgeDoc } from './badge-doc';
 import { ButtonDoc } from './button-doc';
 import { CardDoc } from './card-doc';
 import { CheckboxDoc } from './checkbox-doc';
 import { DialogDoc } from './dialog-doc';
+import { EmptyStateDoc } from './empty-state-doc';
+import { ErrorPageDoc } from './error-page-doc';
+import { ErrorStateDoc } from './error-state-doc';
 import { FieldDoc } from './field-doc';
 import { FileDropzoneDoc } from './file-dropzone-doc';
+import { FileListDoc } from './file-list-doc';
 import { InputDoc } from './input-doc';
 import { LinkDoc } from './link-doc';
 import { MenuDoc } from './menu-doc';
 import { PopoverDoc } from './popover-doc';
+import { ProgressDoc } from './progress-doc';
 import { RadioGroupDoc } from './radio-group-doc';
 import { SelectDoc } from './select-doc';
 import { SeparatorDoc } from './separator-doc';
+import { SkeletonDoc } from './skeleton-doc';
 import { SwitchDoc } from './switch-doc';
 import { TableDoc } from './table-doc';
 import { TabsDoc } from './tabs-doc';
 import { TextDoc } from './text-doc';
 import { TextareaDoc } from './textarea-doc';
+import { ToastDoc } from './toast-doc';
 import { ToggleGroupDoc } from './toggle-group-doc';
 import { TooltipDoc } from './tooltip-doc';
 
@@ -57,6 +65,14 @@ const COMPONENT_DOCS: readonly { name: ComponentName; Doc: ComponentType }[] = [
   { name: 'Table', Doc: TableDoc },
   { name: 'ToggleGroup', Doc: ToggleGroupDoc },
   { name: 'Accordion', Doc: AccordionDoc },
+  { name: 'Toast', Doc: ToastDoc },
+  { name: 'Badge', Doc: BadgeDoc },
+  { name: 'Progress', Doc: ProgressDoc },
+  { name: 'Skeleton', Doc: SkeletonDoc },
+  { name: 'EmptyState', Doc: EmptyStateDoc },
+  { name: 'ErrorState', Doc: ErrorStateDoc },
+  { name: 'ErrorPage', Doc: ErrorPageDoc },
+  { name: 'FileList', Doc: FileListDoc },
 ];
 
 export function generateStaticParams() {
