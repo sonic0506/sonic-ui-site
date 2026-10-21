@@ -1,41 +1,22 @@
-import { Button } from '@xonic0506/sonic-ui';
-import { CircleAlert, CircleCheck, Info, TriangleAlert, X } from 'lucide-react';
+import { ToastPreview } from '@/shared/ui';
 
 import { DocTemplate } from './doc-template';
 
-const TONES = [
-  { tone: 'neutral', icon: <Info className="text-muted" /> },
-  { tone: 'success', icon: <CircleCheck className="text-success" /> },
-  { tone: 'warning', icon: <TriangleAlert className="text-warning" /> },
-  { tone: 'danger', icon: <CircleAlert className="text-danger" /> },
-] as const;
+const TONES = ['neutral', 'success', 'warning', 'danger'] as const;
 
 export function ToastDoc() {
   return (
     <DocTemplate
       title="Toast"
       description="사용자 동작의 결과를 잠깐 알려 줘요. 화면 오른쪽 아래에 쌓여요."
-      // Toast는 useToast().add로만 떠서, 보이는 모양을 같은 토큰으로 그려요.
-      variants={TONES.map(({ tone, icon }) => ({
+      variants={TONES.map((tone) => ({
         caption: tone,
         demo: (
-          <div
-            inert
-            className="flex w-90 max-w-full items-start gap-3 rounded-lg border border-default bg-surface p-3 text-default"
-          >
-            <span className="flex h-7 shrink-0 items-center *:size-4">
-              {icon}
-            </span>
-            <div className="flex min-w-0 flex-1 flex-col gap-1 pt-1">
-              <p className="text-body-strong">API 키를 만들었어요</p>
-              <p className="text-caption text-muted">
-                키는 지금 한 번만 보여 줘요.
-              </p>
-            </div>
-            <Button variant="ghost" size="icon-sm" aria-label="알림 닫기">
-              <X />
-            </Button>
-          </div>
+          <ToastPreview
+            tone={tone}
+            title="API 키를 만들었어요"
+            description="키는 지금 한 번만 보여 줘요."
+          />
         ),
       }))}
       rules={[
