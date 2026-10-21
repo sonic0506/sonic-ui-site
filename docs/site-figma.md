@@ -4,7 +4,8 @@
 
 - Sonic UI Site: fileKey `X5weWymEMncXZs9f7FFY8T`
 - 디자인 시스템(팀 라이브러리로 연결): fileKey `XifnZsjqJWJqFmAmrM6p3u`
-- 사이트 파일에는 로컬 변수·스타일이 없고, Core 컴포넌트는 모두 라이브러리 인스턴스예요. sonic-ui 0.5.0과 맞춰져 있어요(2026-10-22).
+- 사이트 파일에는 로컬 변수·스타일이 없고, Core 컴포넌트는 모두 라이브러리 인스턴스예요. sonic-ui 0.5.0과 맞춰져 있어요(2026-10-22). 텍스트 스타일은 IBM Plex Sans KR(한글·영문)과 IBM Plex Mono이고, 코드도 같은 글꼴(`@fontsource/ibm-plex-sans-kr`)이라 줄바꿈이 같아요.
+- 라이브러리 업데이트는 컴포넌트와 **텍스트 스타일**을 모두 받아요. 스타일을 빠뜨리면 텍스트가 예전 버전 스타일을 계속 가리켜요(텍스트의 `textStyleId`가 `importStyleByKeyAsync`로 받은 최신 id와 같은지로 확인해요).
 
 ## 페이지와 노드
 
