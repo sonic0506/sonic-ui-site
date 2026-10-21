@@ -7,10 +7,9 @@ import {
   Error500Image,
   ErrorImage,
 } from '@/shared/assets';
-import { DocPage, DocSection, type TocItem } from '@/shared/ui';
+import { DocPage, DocSection, RuleList, type TocItem } from '@/shared/ui';
 
 import { ILLUSTRATION_RULES, ILLUSTRATION_SIZES } from '../model/illustration';
-import { RuleList } from './rule-list';
 
 const TOC: readonly TocItem[] = [
   { id: 'set', label: '세트' },

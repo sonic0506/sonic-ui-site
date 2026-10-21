@@ -8,11 +8,25 @@ import {
   getComponentSlug,
 } from '@/entities/component';
 
+import { AvatarDoc } from './avatar-doc';
 import { ButtonDoc } from './button-doc';
+import { CardDoc } from './card-doc';
+import { InputDoc } from './input-doc';
+import { LinkDoc } from './link-doc';
+import { SeparatorDoc } from './separator-doc';
+import { TextDoc } from './text-doc';
+import { TextareaDoc } from './textarea-doc';
 
 // 문서를 쓴 컴포넌트만 둬요. 목록에는 있지만 문서가 없는 컴포넌트는 빌드 때 404 페이지로 만들어져요.
 const COMPONENT_DOCS: readonly { name: ComponentName; Doc: ComponentType }[] = [
   { name: 'Button', Doc: ButtonDoc },
+  { name: 'Input', Doc: InputDoc },
+  { name: 'Textarea', Doc: TextareaDoc },
+  { name: 'Text', Doc: TextDoc },
+  { name: 'Link', Doc: LinkDoc },
+  { name: 'Card', Doc: CardDoc },
+  { name: 'Avatar', Doc: AvatarDoc },
+  { name: 'Separator', Doc: SeparatorDoc },
 ];
 
 export function generateStaticParams() {

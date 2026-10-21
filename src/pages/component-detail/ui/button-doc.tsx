@@ -1,12 +1,4 @@
-import {
-  Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@xonic0506/sonic-ui';
+import { Button } from '@xonic0506/sonic-ui';
 import { Ellipsis } from 'lucide-react';
 
 import {
@@ -18,6 +10,8 @@ import {
   StageItem,
   type TocItem,
 } from '@/shared/ui';
+
+import { PropsTable } from './props-table';
 
 const TOC: readonly TocItem[] = [
   { id: 'variants', label: '종류' },
@@ -147,24 +141,7 @@ export function ButtonDoc() {
       </DocSection>
 
       <DocSection id="props" title="Props">
-        <Table className="min-w-160">
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-40">prop</TableHead>
-              <TableHead>값</TableHead>
-              <TableHead className="w-40">기본값</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {PROPS.map((prop) => (
-              <TableRow key={prop.name}>
-                <TableCell>{prop.name}</TableCell>
-                <TableCell>{prop.values}</TableCell>
-                <TableCell>{prop.defaultValue}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        <PropsTable rows={PROPS} />
       </DocSection>
 
       <DocSection id="code" title="코드">

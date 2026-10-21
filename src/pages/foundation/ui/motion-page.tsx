@@ -1,7 +1,6 @@
-import { DocPage, DocSection, type TocItem } from '@/shared/ui';
+import { DocPage, DocSection, RuleList, type TocItem } from '@/shared/ui';
 
 import { DURATIONS, EASINGS, MOTION_RULES } from '../model/motion';
-import { RuleList } from './rule-list';
 
 const TOC: readonly TocItem[] = [
   { id: 'duration', label: '시간' },

@@ -39,10 +39,9 @@ import {
   X,
 } from 'lucide-react';
 
-import { DocPage, DocSection, type TocItem } from '@/shared/ui';
+import { DocPage, DocSection, RuleList, type TocItem } from '@/shared/ui';
 
 import { ICON_RULES, ICON_SIZES } from '../model/icon';
-import { RuleList } from './rule-list';
 
 const TOC: readonly TocItem[] = [
   { id: 'set', label: '세트' },

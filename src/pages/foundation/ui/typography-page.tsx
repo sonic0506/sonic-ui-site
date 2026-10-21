@@ -1,11 +1,10 @@
-import { DocPage, DocSection, type TocItem } from '@/shared/ui';
+import { DocPage, DocSection, RuleList, type TocItem } from '@/shared/ui';
 
 import {
   FONT_FAMILIES,
   TEXT_STYLES,
   TYPOGRAPHY_RULES,
 } from '../model/typography';
-import { RuleList } from './rule-list';
 import { SpecRow } from './spec-row';
 
 const TOC: readonly TocItem[] = [
