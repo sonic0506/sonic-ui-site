@@ -1,0 +1,49 @@
+# 사이트 Figma와 작업 규칙
+
+사이트 화면의 원본은 Figma 파일 **Sonic UI Site**예요. 코드를 만들거나 고칠 때 아래 노드를 먼저 확인해요.
+
+- Sonic UI Site: fileKey `X5weWymEMncXZs9f7FFY8T`
+- 디자인 시스템(팀 라이브러리로 연결): fileKey `XifnZsjqJWJqFmAmrM6p3u`
+- 사이트 파일에는 로컬 변수·스타일이 없고, Core 컴포넌트는 모두 라이브러리 인스턴스예요. sonic-ui 0.4.1과 맞춰져 있어요(2026-10-21).
+
+## 페이지와 노드
+
+| 페이지              | 노드                                                                                                                                                                                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cover 21:2088       | 프레임 21:2089 (1920×960)                                                                                                                                                                                                                                   |
+| Site components 0:1 | 보관 프레임 3:40 — Header 3:82, Header Mobile 4:204, Footer set 55:47 (desktop 3:254, mobile 55:39), Logo mark 21:2031, Top Nav Item 3:46, Theme Toggle 3:47, Nav Item 3:221, Nav Group 3:222, TOC 3:235, Code Block 3:243, Index Card 4:165, Do-Dont 4:203 |
+| Home 3:2            | Light 5:56, Dark 5:278, 375 5:347                                                                                                                                                                                                                           |
+| Components 9:47     | 인덱스 9:48, Button Light 11:593 · Dark 12:832 · 375 12:983, 상세 30개(Light 1440 + 375) — 묶음별 줄(기본·폼·오버레이·탐색표시·피드백상태), 모바일은 줄 오른쪽                                                                                              |
+| Foundation 10:47    | 인덱스 10:48, Color 14:139, Typography 31:197, Spacing·Radius 32:255, Motion 33:309, Icon 34:411, Illustration 35:473 (+ 각 375)                                                                                                                            |
+| Guidelines 10:203   | 인덱스 10:204, 데이터 상태 15:161, 원칙 36:303, 접근성 36:472, 레이아웃 37:414, 문구 38:480 (+ 각 375)                                                                                                                                                      |
+| Case Studies 10:390 | 인덱스 10:391, API 키 관리 16:125 (+ 375)                                                                                                                                                                                                                   |
+
+## 코드 위치 (FSD)
+
+- 라우트: 루트 `app/` — 각 `page.tsx`는 `src/pages/<영역>`을 다시 내보내기만 해요.
+- `src/pages/`: `home`, `foundation`, `components`, `guidelines`, `case-studies`
+- `src/widgets/`: 헤더, 사이드바, TOC, 푸터
+- 사이트 전용 Domain 컴포넌트(Do-Dont, Index Card, Code Block)는 이 프로젝트에 둬요. sonic-ui에 넣지 않아요.
+- Core 컴포넌트와 토큰은 `@xonic0506/sonic-ui`에서만 가져와요.
+
+## 화면 크기와 모바일
+
+- 모든 페이지는 Light 1440 + Light 375가 있어요. Dark는 Button·홈 템플릿만 있어요.
+- 모바일(375)에서는 Header Mobile + Footer mobile을 쓰고, Sidebar·TOC는 없어요. Main은 가로를 꽉 채워요.
+- 표는 가로 스크롤(최소 640), 가로로 늘어선 행은 세로로 쌓아요(앞 두 칸과 Visual은 한 줄). 넘치는 예시는 줄바꿈하거나 가로 스크롤해요.
+- Dialog·AlertDialog는 모바일 variant를 써요. 모바일 인덱스 카드는 썸네일을 숨겨요.
+
+## 페이지 틀
+
+- 상세 페이지: Sidebar + Main + TOC(200).
+- 컴포넌트 상세 순서: 변형(원본의 모든 variant, 많으면 대표만) → 사용법 → Props 표(첫 열 240) → 코드.
+- Do-Dont: surface 배경 + 1px default 테두리, 위 테두리 대신 2px 색 막대, 라벨·설명은 아래에.
+
+## Figma 작업 규칙
+
+Figma 쓰기는 사용자 확인 후에 해요.
+
+- 새 상세 페이지는 기존 인덱스·상세 프레임을 복제 → Main을 비우고 다시 채워요.
+- 프레임 높이를 재서 줄 간격 400으로 배치해요. 끝나면 겹침 검사와 하드코딩 감사(fill, stroke, padding, gap, radius, 텍스트 스타일) 0건을 확인해요.
+- 라이브러리를 고치면 디자인 시스템 파일에서 다시 게시해요. 사이트 인스턴스는 업데이트를 받기 전까지 예전 버전이라 `swapComponent`로 갱신해요.
+- 이미지는 PNG로 올려요(webp는 Figma에서 안 보여요). 다른 파일의 노드는 복사할 수 없어서 `importComponentByKeyAsync` 등으로 다시 조립해요.
