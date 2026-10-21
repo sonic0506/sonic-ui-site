@@ -6,7 +6,6 @@ import {
 } from '@xonic0506/sonic-ui';
 import { ExternalLink, Moon, Sun } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { ComponentThumbnail } from '@/entities/component';
 import { MascotImage } from '@/shared/assets';
@@ -72,8 +71,20 @@ export function HomePage() {
           </div>
           <div className="flex gap-2">
             {/* Button은 render가 <a>이면 role="button"을 붙여요. 링크로 읽히게 role을 되돌려요. */}
-            <Button size="lg" role="link" render={<Link href="/components" />}>
+            <Button
+              size="lg"
+              role="link"
+              render={
+                <a
+                  href={SITE_LINKS.gettingStarted}
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              }
+            >
               시작하기
+              <ExternalLink aria-hidden />
+              <span className="sr-only">(새 탭)</span>
             </Button>
             <Button
               size="lg"
