@@ -6,10 +6,10 @@ const ALIGN_CLASS = {
   end: 'items-end',
 } as const;
 
-// roomy: Button 상세(위아래 space/10, 사이 space/3). compact: 다른 컴포넌트 상세(사방 space/6, 사이 space/6).
+// roomy: Button 상세(위아래 space/10, 사이 space/3, 가운데). compact: 다른 컴포넌트 상세(사방 space/6, 사이 space/6, 왼쪽부터).
 const SPACING_CLASS = {
-  roomy: 'gap-3 px-6 py-10',
-  compact: 'gap-6 p-6',
+  roomy: 'justify-center gap-3 px-6 py-10',
+  compact: 'justify-start gap-6 p-6',
 } as const;
 
 interface StageProps {
@@ -27,7 +27,7 @@ export function Stage({
 }: StageProps) {
   return (
     <div
-      className={`flex flex-wrap justify-center rounded-lg border border-default bg-surface text-body ${SPACING_CLASS[spacing]} ${ALIGN_CLASS[align]}`}
+      className={`flex flex-wrap rounded-lg border border-default bg-surface text-body ${SPACING_CLASS[spacing]} ${ALIGN_CLASS[align]}`}
     >
       {children}
     </div>
