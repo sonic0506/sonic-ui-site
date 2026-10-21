@@ -1,12 +1,12 @@
 {
   "origin": "https://github.com/sonic0506/sonic-harness-fe.git",
-  "ref": "50ecb6c63c24addbce5c1fdfacb4ca584ac3ec2b",
+  "ref": "2bfcf98af8b3f66679f55b999050e5991fda0263",
   "checkedRef": "50ecb6c63c24addbce5c1fdfacb4ca584ac3ec2b",
   "files": {
     "commitlint.base.mjs": "19482207e6eae61445ab3c6938873ab4cb8c783c88fdb846198357bdc2dc383a",
     "eslint-plugin-sonic.mjs": "e834b63ddc5f9aaeee83a92d33b8e877002dca458f519b73259b764f7274fbd9",
     "eslint.base.mjs": "40529dc688c11267ab3c8e0517ff163f66d91fb5874661bb47d38fd92222bc03",
-    "harness.md": "316b8aef2477efc959d41744407552feda3257d05e167d3548828c126c8b449c",
+    "harness.md": "409fd06b1be0726f1c2fb439b8f0409776ed48ddb3669c07b8c22db08f06f33e",
     "prettier.base.mjs": "34cb82dc9f744ff9bc384b7240ae30f91e3a685123c4985ee445f7e777c7b2ed",
     "tsconfig.strict.json": "9ebfb76465f292fcc56a0119460788f8ad750204b636b9b6f754fa86029621a4"
   },
@@ -44,5 +44,7 @@
     "src/shared/config/env.ts",
     "src/shared/config/index.ts"
   ],
-  "updatedAt": "2026-10-21T05:00:24.010Z"
+  "updatedAt": "2026-10-21T13:54:27.633Z",
+  "contributing": {},
+  "templateMerges": []
 }
