@@ -5,6 +5,7 @@ import {
   TEXT_STYLES,
   TYPOGRAPHY_RULES,
 } from '../model/typography';
+import { RuleList } from './rule-list';
 import { SpecRow } from './spec-row';
 
 const TOC: readonly TocItem[] = [
@@ -43,19 +44,7 @@ export function TypographyPage() {
         </ul>
       </DocSection>
       <DocSection id="rules" title="규칙">
-        <ul>
-          {TYPOGRAPHY_RULES.map((rule) => (
-            <li
-              key={rule.title}
-              className="flex flex-col gap-1 border-b border-default py-4"
-            >
-              <span className="text-body-strong text-default">
-                {rule.title}
-              </span>
-              <span className="text-body text-muted">{rule.description}</span>
-            </li>
-          ))}
-        </ul>
+        <RuleList rules={TYPOGRAPHY_RULES} />
       </DocSection>
     </DocPage>
   );
