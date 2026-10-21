@@ -1,6 +1,6 @@
+import { COMPONENT_GROUPS, getComponentHref } from '@/entities/component';
 import { DocPage, IndexCard } from '@/shared/ui';
 
-import { COMPONENT_GROUPS, getComponentHref } from './model/components-catalog';
 import { ComponentThumbnail } from './ui/component-thumbnail';
 
 export function ComponentsPage() {

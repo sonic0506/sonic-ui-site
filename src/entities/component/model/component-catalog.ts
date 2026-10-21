@@ -1,5 +1,3 @@
-import type { SidebarEntry } from '@/widgets/site-sidebar';
-
 // Figma Components 인덱스(9:48)와 사이드바(11:596)의 순서·문구예요.
 export const COMPONENT_GROUPS = [
   {
@@ -72,19 +70,3 @@ export const COMPONENT_GROUPS = [
 
 export type ComponentName =
   (typeof COMPONENT_GROUPS)[number]['items'][number]['name'];
-
-// 'RadioGroup' → '/components/radio-group'
-export function getComponentHref(name: ComponentName) {
-  return `/components/${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
-}
-
-export const COMPONENTS_NAV: readonly SidebarEntry[] = [
-  { href: '/components', label: '개요' },
-  ...COMPONENT_GROUPS.map(({ title, items }) => ({
-    title,
-    links: items.map(({ name }) => ({
-      href: getComponentHref(name),
-      label: name,
-    })),
-  })),
-];

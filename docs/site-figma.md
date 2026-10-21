@@ -20,10 +20,14 @@
 
 ## 코드 위치 (FSD)
 
-- 라우트: 루트 `app/` — 각 `page.tsx`는 `src/pages/<영역>`을 다시 내보내기만 해요.
-- `src/pages/`: `home`, `foundation`, `components`, `guidelines`, `case-studies`
-- `src/widgets/`: 헤더, 사이드바, TOC, 푸터
-- 사이트 전용 Domain 컴포넌트(Do-Dont, Index Card, Code Block)는 이 프로젝트에 둬요. sonic-ui에 넣지 않아요.
+- 라우트: 루트 `app/` — `page.tsx`·`layout.tsx`는 `src/pages/<slice>`를 다시 내보내기만 해요(`generateStaticParams`도 함께 다시 내보내요).
+- `src/pages/`: 화면 하나(또는 같은 틀의 화면 묶음)가 slice 하나예요. slice 바로 아래에는 `index.ts`와 route가 가져가는 진입 파일만 두고, 나머지는 `ui/`·`model/`에 둬요.
+  - `components`: 인덱스(`/components`)와 섹션 레이아웃(사이드바)
+  - `component-detail`: 상세 30개의 진입점 하나(`/components/[slug]`). 컴포넌트별 문서는 `ui/<이름>-doc.tsx`로 쓰고 `component-detail-page.tsx`의 `COMPONENT_DOCS`에 등록해요.
+  - `home`, 이후 `foundation`, `guidelines`, `case-studies`도 같은 방식이에요.
+- `src/entities/component`: 컴포넌트 목록(이름·설명·묶음)과 slug 함수. 인덱스·상세·사이드바가 함께 써요.
+- `src/widgets/`: 헤더, 사이드바, 푸터
+- 사이트 전용 문서 부품(DocPage, DocSection, Stage, Do-Dont, Index Card, Code Block, TOC)은 `src/shared/ui`에 둬요. sonic-ui에 넣지 않아요.
 - Core 컴포넌트와 토큰은 `@xonic0506/sonic-ui`에서만 가져와요.
 
 ## 화면 크기와 모바일

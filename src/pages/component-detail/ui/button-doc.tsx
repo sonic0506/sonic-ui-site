@@ -62,7 +62,7 @@ import { Ellipsis, Plus } from 'lucide-react';
 <Button><Plus />API 키 만들기</Button>
 <Button size="icon-md" variant="ghost" aria-label="더 보기"><Ellipsis /></Button>`;
 
-export function ButtonPage() {
+export function ButtonDoc() {
   return (
     <DocPage
       title="Button"

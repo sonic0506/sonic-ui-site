@@ -54,9 +54,8 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
+import type { ComponentName } from '@/entities/component';
 import { Error404Image } from '@/shared/assets';
-
-import type { ComponentName } from '../model/components-catalog';
 
 // 썸네일은 inert라 누를 수 없어요. 콜백은 타입을 채우는 용도예요.
 const noop = () => {};
