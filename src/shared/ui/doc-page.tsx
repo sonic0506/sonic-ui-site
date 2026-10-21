@@ -20,7 +20,7 @@ export function DocPage({ title, description, toc, children }: DocPageProps) {
         {children}
       </main>
       {toc && (
-        <aside className="sticky top-0 hidden w-50 shrink-0 self-start pt-10 xl:block">
+        <aside className="sticky top-14 hidden w-50 shrink-0 self-start pt-10 xl:block">
           <Toc items={toc} />
         </aside>
       )}

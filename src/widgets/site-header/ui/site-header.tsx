@@ -12,7 +12,7 @@ import { TopNav } from './top-nav';
 
 export function SiteHeader() {
   return (
-    <header className="flex h-14 items-center gap-2 border-b border-default bg-surface px-4 md:gap-6 md:px-6">
+    <header className="sticky top-0 z-10 flex h-14 items-center gap-2 border-b border-default bg-surface px-4 md:gap-6 md:px-6">
       <div className="flex items-center gap-2">
         <Link href="/" className="flex items-center gap-2 text-default">
           {/* 장식이에요. 옆의 "Sonic UI" 글자가 이름을 전해요. */}

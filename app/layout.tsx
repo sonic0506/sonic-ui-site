@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: 'Sonic UI' };
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     // 저장된 테마를 THEME_INIT_SCRIPT가 하이드레이션 전에 넣어서 data-theme 차이를 허용해요.
-    <html lang="ko" suppressHydrationWarning>
+    <html lang="ko" suppressHydrationWarning className="scroll-pt-14">
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
