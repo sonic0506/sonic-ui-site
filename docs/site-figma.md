@@ -24,7 +24,9 @@
 - `src/pages/`: 화면 하나(또는 같은 틀의 화면 묶음)가 slice 하나예요. slice 바로 아래에는 `index.ts`(public API)만 두고, 페이지 컴포넌트를 포함한 나머지는 모두 segment(`ui/`·`model/`·`lib/`)에 둬요. 하네스 예시(슬라이스 바로 아래 `*-page.tsx`)와 달리 일반 FSD를 따라요.
   - `components`: 인덱스(`/components`)와 섹션 레이아웃(사이드바)
   - `component-detail`: 상세 30개의 진입점 하나(`/components/[slug]`). 컴포넌트별 문서는 `ui/<이름>-doc.tsx`로 쓰고 `ui/component-detail-page.tsx`의 `COMPONENT_DOCS`에 등록해요.
-  - `home`, 이후 `foundation`, `guidelines`, `case-studies`도 같은 방식이에요.
+  - `foundation`: 인덱스, 섹션 레이아웃, 페이지 6개(Color …)를 한 slice에 둬요. 페이지마다 내용이 달라서 `[slug]` 대신 정적 route(`app/foundation/color/page.tsx` …)로 다시 내보내요. 목록은 slice 안에서만 써서 `model/foundation-nav.ts`에 둬요.
+  - `home`, 이후 `guidelines`, `case-studies`도 내용이 페이지마다 다르면 `foundation`처럼, 같은 틀이 많으면 `component-detail`처럼 해요.
+- Color 견본처럼 light·dark를 나란히 보여야 하면 그 요소에 `data-theme="light"`·`"dark"`를 붙여요(sonic-ui 토큰이 `[data-theme]` 범위로 정의돼 있어요).
 - `src/entities/component`: 컴포넌트 목록(이름·설명·묶음), slug 함수, 썸네일(`ComponentThumbnail`). 인덱스·상세·사이드바·홈이 함께 써요.
 - `src/widgets/`: 헤더, 사이드바, 푸터
 - 사이트 전용 문서 부품(DocPage, DocSection, Stage, Do-Dont, Index Card, Code Block, TOC)은 `src/shared/ui`에 둬요. sonic-ui에 넣지 않아요.
