@@ -35,7 +35,7 @@ export function SiteSidebar({ label, entries }: SiteSidebarProps) {
   return (
     <nav
       aria-label={label}
-      className="hidden w-60 shrink-0 flex-col gap-1 overflow-y-auto overscroll-contain border-r border-default bg-surface px-4 py-6 md:sticky md:top-14 md:flex md:h-below-header md:self-start"
+      className="hidden w-60 shrink-0 flex-col gap-1 overflow-y-auto *:shrink-0 overscroll-contain border-r border-default bg-surface px-4 py-6 md:sticky md:top-14 md:flex md:h-below-header md:self-start"
     >
       {entries.map((entry) =>
         'links' in entry ? (
