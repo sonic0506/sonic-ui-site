@@ -2,14 +2,12 @@ import { Link } from '@xonic0506/sonic-ui';
 import Image from 'next/image';
 
 import { LogoMarkImage } from '@/shared/assets';
+import { SITE_LINKS } from '@/shared/config';
 
 const EXTERNAL_LINKS = [
-  { href: 'https://github.com/sonic0506/sonic-design-system', label: 'GitHub' },
-  { href: 'https://www.npmjs.com/package/@xonic0506/sonic-ui', label: 'npm' },
-  {
-    href: 'https://www.figma.com/design/XifnZsjqJWJqFmAmrM6p3u',
-    label: 'Figma',
-  },
+  { href: SITE_LINKS.github, label: 'GitHub' },
+  { href: SITE_LINKS.npm, label: 'npm' },
+  { href: SITE_LINKS.figma, label: 'Figma' },
 ] as const;
 
 export function SiteFooter() {

@@ -6,6 +6,8 @@ interface IndexCardProps {
   title: string;
   description: string;
   thumbnail: ReactNode;
+  /** 모바일에서도 썸네일을 보여요. 기본은 숨겨요(목록이 긴 인덱스 페이지 규칙). */
+  hasMobileThumbnail?: boolean;
 }
 
 // 카드 전체가 링크예요. 썸네일 안에도 링크가 있을 수 있어서 <a>로 감싸지 않고, 제목 링크의 ::after를 카드 전체로 넓혀요.
@@ -14,13 +16,14 @@ export function IndexCard({
   title,
   description,
   thumbnail,
+  hasMobileThumbnail = false,
 }: IndexCardProps) {
   return (
     <article className="relative flex flex-col overflow-hidden rounded-lg border border-default bg-surface hover:border-strong">
       <div
         inert
         aria-hidden="true"
-        className="hidden h-40 items-center justify-center overflow-hidden bg-canvas md:flex"
+        className={`h-40 items-center justify-center overflow-hidden bg-canvas md:flex ${hasMobileThumbnail ? 'flex' : 'hidden'}`}
       >
         {thumbnail}
       </div>

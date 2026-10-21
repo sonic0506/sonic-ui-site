@@ -25,7 +25,7 @@
   - `components`: 인덱스(`/components`)와 섹션 레이아웃(사이드바)
   - `component-detail`: 상세 30개의 진입점 하나(`/components/[slug]`). 컴포넌트별 문서는 `ui/<이름>-doc.tsx`로 쓰고 `ui/component-detail-page.tsx`의 `COMPONENT_DOCS`에 등록해요.
   - `home`, 이후 `foundation`, `guidelines`, `case-studies`도 같은 방식이에요.
-- `src/entities/component`: 컴포넌트 목록(이름·설명·묶음)과 slug 함수. 인덱스·상세·사이드바가 함께 써요.
+- `src/entities/component`: 컴포넌트 목록(이름·설명·묶음), slug 함수, 썸네일(`ComponentThumbnail`). 인덱스·상세·사이드바·홈이 함께 써요.
 - `src/widgets/`: 헤더, 사이드바, 푸터
 - 사이트 전용 문서 부품(DocPage, DocSection, Stage, Do-Dont, Index Card, Code Block, TOC)은 `src/shared/ui`에 둬요. sonic-ui에 넣지 않아요.
 - Core 컴포넌트와 토큰은 `@xonic0506/sonic-ui`에서만 가져와요.
@@ -35,7 +35,7 @@
 - 모든 페이지는 Light 1440 + Light 375가 있어요. Dark는 Button·홈 템플릿만 있어요.
 - 모바일(375)에서는 Header Mobile + Footer mobile을 쓰고, Sidebar·TOC는 없어요. Main은 가로를 꽉 채워요.
 - 표는 가로 스크롤(최소 640), 가로로 늘어선 행은 세로로 쌓아요(앞 두 칸과 Visual은 한 줄). 넘치는 예시는 줄바꿈하거나 가로 스크롤해요.
-- Dialog·AlertDialog는 모바일 variant를 써요. 모바일 인덱스 카드는 썸네일을 숨겨요.
+- Dialog·AlertDialog는 모바일 variant를 써요. 모바일 인덱스 카드는 썸네일을 숨겨요(목록이 긴 인덱스 페이지). 홈의 둘러보기 카드 4개는 모바일에서도 썸네일을 보여요(`IndexCard`의 `hasMobileThumbnail`).
 
 ## 페이지 틀
 
