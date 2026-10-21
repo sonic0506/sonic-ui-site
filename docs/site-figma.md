@@ -28,6 +28,7 @@
   - `foundation`: 인덱스, 섹션 레이아웃, 페이지 6개(Color …)를 한 slice에 둬요. 페이지마다 내용이 달라서 `[slug]` 대신 정적 route(`app/foundation/color/page.tsx` …)로 다시 내보내요. 목록은 slice 안에서만 써서 `model/foundation-nav.ts`에 둬요.
   - `home`, 이후 `guidelines`, `case-studies`도 내용이 페이지마다 다르면 `foundation`처럼, 같은 틀이 많으면 `component-detail`처럼 해요.
 - Color 견본처럼 light·dark를 나란히 보여야 하면 그 요소에 `data-theme="light"`·`"dark"`를 붙여요(sonic-ui 토큰이 `[data-theme]` 범위로 정의돼 있어요).
+- 500(렌더 에러)은 `app/error.tsx` → `src/pages/server-error`(`ErrorPage` 500 + 다시 시도 = Next `retry()`)예요. Next는 `error.tsx` 파일 자체에 `'use client'`가 있어야 해서 route 파일에도 붙여요.
 - 404는 `app/not-found.tsx` → `src/pages/not-found`(sonic-ui `ErrorPage` 404)예요. Next 기본 404를 쓰면 그 화면의 전역 `<style>`이 cacheComponents의 Activity로 숨겨진 채 남아 다른 페이지 배경까지 바꿔요.
 - `src/entities/component`: 컴포넌트 목록(이름·설명·묶음), slug 함수, 썸네일(`ComponentThumbnail`). 인덱스·상세·사이드바·홈이 함께 써요.
 - `src/widgets/`: 헤더, 사이드바, 푸터
