@@ -48,7 +48,11 @@ export function DocTemplate({
       <DocSection id="variants" title="변형" description={variantsDescription}>
         <Stage align="end" spacing="compact">
           {variants.map(({ caption, demo }, index) => (
-            <StageItem key={caption ?? index} {...(caption && { caption })}>
+            <StageItem
+              key={caption ?? index}
+              hasMonoCaption
+              {...(caption && { caption })}
+            >
               {demo}
             </StageItem>
           ))}

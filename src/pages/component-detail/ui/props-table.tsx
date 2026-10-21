@@ -27,7 +27,8 @@ export function PropsTable({ rows }: { rows: readonly PropRow[] }) {
       <TableBody>
         {rows.map((row) => (
           <TableRow key={row.name}>
-            <TableCell>{row.name}</TableCell>
+            {/* 긴 이름은 줄을 바꾸지 않고 열을 넓혀요(Figma Tabs·ToggleGroup은 첫 열 240) */}
+            <TableCell className="whitespace-nowrap">{row.name}</TableCell>
             <TableCell>{row.values}</TableCell>
             <TableCell>{row.defaultValue}</TableCell>
           </TableRow>

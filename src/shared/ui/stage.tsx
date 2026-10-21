@@ -34,17 +34,26 @@ export function Stage({
   );
 }
 
+// 캡션은 Button 상세만 caption, 다른 컴포넌트 상세는 mono-caption이에요(Figma).
 export function StageItem({
   caption,
+  hasMonoCaption = false,
   children,
 }: {
   caption?: string;
+  hasMonoCaption?: boolean;
   children: ReactNode;
 }) {
   return (
     <div className="flex max-w-full flex-col items-center gap-2">
       {children}
-      {caption && <span className="text-caption text-muted">{caption}</span>}
+      {caption && (
+        <span
+          className={`text-caption text-muted ${hasMonoCaption ? 'font-mono' : ''}`}
+        >
+          {caption}
+        </span>
+      )}
     </div>
   );
 }
