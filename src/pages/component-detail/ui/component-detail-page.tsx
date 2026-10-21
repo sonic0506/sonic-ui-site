@@ -11,9 +11,15 @@ import {
 import { AvatarDoc } from './avatar-doc';
 import { ButtonDoc } from './button-doc';
 import { CardDoc } from './card-doc';
+import { CheckboxDoc } from './checkbox-doc';
+import { FieldDoc } from './field-doc';
+import { FileDropzoneDoc } from './file-dropzone-doc';
 import { InputDoc } from './input-doc';
 import { LinkDoc } from './link-doc';
+import { RadioGroupDoc } from './radio-group-doc';
+import { SelectDoc } from './select-doc';
 import { SeparatorDoc } from './separator-doc';
+import { SwitchDoc } from './switch-doc';
 import { TextDoc } from './text-doc';
 import { TextareaDoc } from './textarea-doc';
 
@@ -27,6 +33,12 @@ const COMPONENT_DOCS: readonly { name: ComponentName; Doc: ComponentType }[] = [
   { name: 'Card', Doc: CardDoc },
   { name: 'Avatar', Doc: AvatarDoc },
   { name: 'Separator', Doc: SeparatorDoc },
+  { name: 'Field', Doc: FieldDoc },
+  { name: 'Checkbox', Doc: CheckboxDoc },
+  { name: 'RadioGroup', Doc: RadioGroupDoc },
+  { name: 'Switch', Doc: SwitchDoc },
+  { name: 'Select', Doc: SelectDoc },
+  { name: 'FileDropzone', Doc: FileDropzoneDoc },
 ];
 
 export function generateStaticParams() {

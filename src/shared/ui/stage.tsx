@@ -42,7 +42,7 @@ export function StageItem({
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex max-w-full flex-col items-center gap-2">
       {children}
       {caption && <span className="text-caption text-muted">{caption}</span>}
     </div>
