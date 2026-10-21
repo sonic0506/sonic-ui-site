@@ -1,2 +1,2 @@
-export { ComponentsLayout } from './components-layout';
-export { ComponentsPage } from './components-page';
+export { ComponentsLayout } from './ui/components-layout';
+export { ComponentsPage } from './ui/components-page';

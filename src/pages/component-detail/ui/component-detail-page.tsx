@@ -8,7 +8,7 @@ import {
   getComponentSlug,
 } from '@/entities/component';
 
-import { ButtonDoc } from './ui/button-doc';
+import { ButtonDoc } from './button-doc';
 
 // 문서를 쓴 컴포넌트만 둬요. 목록에는 있지만 문서가 없는 컴포넌트는 빌드 때 404 페이지로 만들어져요.
 const COMPONENT_DOCS: readonly { name: ComponentName; Doc: ComponentType }[] = [

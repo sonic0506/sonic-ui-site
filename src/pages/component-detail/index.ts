@@ -1,4 +1,4 @@
 export {
   ComponentDetailPage,
   generateStaticParams,
-} from './component-detail-page';
+} from './ui/component-detail-page';
