@@ -27,8 +27,9 @@
   - `component-detail`: 상세 30개의 진입점 하나(`/components/[slug]`). 컴포넌트별 문서는 `ui/<이름>-doc.tsx`로 쓰고 `ui/component-detail-page.tsx`의 `COMPONENT_DOCS`에 등록해요.
   - `foundation`: 인덱스, 섹션 레이아웃, 페이지 6개(Color …)를 한 slice에 둬요. 페이지마다 내용이 달라서 `[slug]` 대신 정적 route(`app/foundation/color/page.tsx` …)로 다시 내보내요. 목록은 slice 안에서만 써서 `model/foundation-nav.ts`에 둬요.
   - `guidelines`: `foundation`처럼 인덱스, 섹션 레이아웃, 페이지 5개를 한 slice에 두고 정적 route로 다시 내보내요(`model/guidelines-nav.ts`).
-  - `home`, 이후 `case-studies`도 내용이 페이지마다 다르면 `foundation`처럼, 같은 틀이 많으면 `component-detail`처럼 해요.
-- Dialog·Menu·Popover·Tooltip처럼 Portal로 뜨는 컴포넌트와 Select 목록은 변형 판에서 열린 모양을 같은 토큰으로 그린 미리보기(`inert`)로 보여 줘요(`component-detail/ui/dialog-preview.tsx` 등).
+  - `case-studies`: 같은 방식으로 인덱스와 사례 페이지(`api-keys`)를 둬요. 사례가 늘면 `model/case-studies-nav.ts`에 더해요.
+  - `home`도 내용이 페이지마다 다르면 `foundation`처럼, 같은 틀이 많으면 `component-detail`처럼 해요.
+- Dialog·Menu·Toast처럼 Portal로 뜨는 컴포넌트는 열린 모양을 같은 토큰으로 그린 미리보기(`inert`)로 보여 줘요. 여러 slice가 쓰는 미리보기는 `shared/ui`(`DialogPreview`, `MenuPopupPreview`, `ToastPreview`)에 있어요.
 - Color 견본처럼 light·dark를 나란히 보여야 하면 그 요소에 `data-theme="light"`·`"dark"`를 붙여요(sonic-ui 토큰이 `[data-theme]` 범위로 정의돼 있어요).
 - 500(렌더 에러)은 `app/error.tsx` → `src/pages/server-error`(`ErrorPage` 500 + 다시 시도 = Next `retry()`)예요. Next는 `error.tsx` 파일 자체에 `'use client'`가 있어야 해서 route 파일에도 붙여요.
 - 404는 `app/not-found.tsx` → `src/pages/not-found`(sonic-ui `ErrorPage` 404)예요. Next 기본 404를 쓰면 그 화면의 전역 `<style>`이 cacheComponents의 Activity로 숨겨진 채 남아 다른 페이지 배경까지 바꿔요.

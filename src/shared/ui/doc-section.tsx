@@ -4,7 +4,7 @@ interface DocSectionProps {
   id: string;
   title: string;
   description?: ReactNode;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export function DocSection({

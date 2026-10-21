@@ -1,6 +1,7 @@
 import { Button, Field, Input } from '@xonic0506/sonic-ui';
 
-import { DialogPreview } from './dialog-preview';
+import { DialogPreview } from '@/shared/ui';
+
 import { DocTemplate } from './doc-template';
 
 export function DialogDoc() {
