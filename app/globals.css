@@ -1,49 +1,10 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+/* sonic은 preflight(base)보다 뒤, 이 프로젝트의 components/utilities보다 앞에 둬요(sonic-ui README). */
+@layer theme, base, sonic, components, utilities;
+@import 'tailwindcss';
+@import '@xonic0506/sonic-ui/styles.css';
+@import '@xonic0506/sonic-ui/tailwind.css';
+/* sonic-ui는 글꼴 이름 "IBM Plex Sans"/"IBM Plex Mono"를 찾아서, 이름을 바꾸는 next/font 대신 fontsource로 불러와요. */
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';

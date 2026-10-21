@@ -4,12 +4,12 @@
 import nextPlugin from '@next/eslint-plugin-next';
 
 import harness from './.sonic-harness/eslint.base.mjs';
-// 디자인 규칙(sonic-ui): npm i @xonic0506/sonic-ui 후 아래 줄과 배열 안 sonicDesign 주석을 풀어요.
-// import sonicDesign from '@xonic0506/sonic-ui/eslint-design-rules';
+// 디자인 규칙(sonic-ui)
+import sonicDesign from '@xonic0506/sonic-ui/eslint-design-rules';
 
 export default [
   ...harness,
   nextPlugin.configs['core-web-vitals'],
-  // sonicDesign,
+  sonicDesign,
   // 이 프로젝트에만 필요한 규칙은 여기에 둬요.
 ];
