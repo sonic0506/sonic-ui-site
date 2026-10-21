@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { SiteSidebar } from '@/widgets/site-sidebar';
 
-import { COMPONENTS_NAV } from './model/components-nav';
+import { COMPONENTS_NAV } from './model/components-catalog';
 
 export function ComponentsLayout({ children }: { children: ReactNode }) {
   return (
