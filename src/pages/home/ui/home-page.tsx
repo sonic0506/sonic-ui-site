@@ -1,6 +1,7 @@
 import {
   Badge,
   Button,
+  buttonVariants,
   ToggleGroup,
   ToggleGroupItem,
 } from '@xonic0506/sonic-ui';
@@ -70,34 +71,26 @@ export function HomePage() {
             </p>
           </div>
           <div className="flex gap-2">
-            {/* Button은 render가 <a>이면 role="button"을 붙여요. 링크로 읽히게 role을 되돌려요. */}
-            <Button
-              size="lg"
-              role="link"
-              render={
-                <a
-                  href={SITE_LINKS.gettingStarted}
-                  target="_blank"
-                  rel="noreferrer"
-                />
-              }
+            <a
+              href={SITE_LINKS.gettingStarted}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants({ size: 'lg' })}
             >
               시작하기
               <ExternalLink aria-hidden />
               <span className="sr-only">(새 탭)</span>
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              role="link"
-              render={
-                <a href={SITE_LINKS.figma} target="_blank" rel="noreferrer" />
-              }
+            </a>
+            <a
+              href={SITE_LINKS.figma}
+              target="_blank"
+              rel="noreferrer"
+              className={buttonVariants({ variant: 'secondary', size: 'lg' })}
             >
               Figma 보기
               <ExternalLink aria-hidden />
               <span className="sr-only">(새 탭)</span>
-            </Button>
+            </a>
           </div>
           <CodeBlock language="bash" code="npm i @xonic0506/sonic-ui" />
         </div>

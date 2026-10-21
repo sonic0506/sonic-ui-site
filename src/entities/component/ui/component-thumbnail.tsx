@@ -20,6 +20,7 @@ import {
   Field,
   FileDropzone,
   FileList,
+  illustrations,
   Input,
   Link,
   Progress,
@@ -53,8 +54,6 @@ import {
   X,
 } from 'lucide-react';
 import Image from 'next/image';
-
-import { Error404Image } from '@/shared/assets';
 
 import type { ComponentName } from '../model/component-catalog';
 
@@ -334,7 +333,14 @@ export function ComponentThumbnail({ name }: { name: ComponentName }) {
         />
       );
     case 'ErrorPage':
-      return <Image src={Error404Image} alt="" width={180} height={120} />;
+      return (
+        <Image
+          src={illustrations['error-404']}
+          alt=""
+          width={180}
+          height={120}
+        />
+      );
     case 'FileList':
       return (
         <FileList

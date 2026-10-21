@@ -1,12 +1,6 @@
-import Image, { type StaticImageData } from 'next/image';
+import { illustrations } from '@xonic0506/sonic-ui';
+import Image from 'next/image';
 
-import {
-  EmptyImage,
-  Error403Image,
-  Error404Image,
-  Error500Image,
-  ErrorImage,
-} from '@/shared/assets';
 import { DocPage, DocSection, RuleList, type TocItem } from '@/shared/ui';
 
 import { ILLUSTRATION_RULES, ILLUSTRATION_SIZES } from '../model/illustration';
@@ -17,46 +11,40 @@ const TOC: readonly TocItem[] = [
   { id: 'rules', label: '규칙' },
 ];
 
-// sonic-ui가 일러스트를 export하지 않아서 Figma에서 받은 PNG를 써요. 에러 페이지 그림은 실제 표시 크기(320)의 절반으로 보여 줘요.
+// 에러 페이지 그림은 실제 표시 크기(320)의 절반으로 보여 줘요.
 const ILLUSTRATIONS: readonly {
-  name: string;
+  name: keyof typeof illustrations;
   usage: string;
-  image: StaticImageData;
   width: number;
   height: number;
 }[] = [
   {
     name: 'empty',
     usage: 'EmptyState 기본',
-    image: EmptyImage,
     width: 120,
     height: 120,
   },
   {
     name: 'error',
     usage: 'ErrorState 기본',
-    image: ErrorImage,
     width: 120,
     height: 120,
   },
   {
     name: 'error-404',
     usage: 'ErrorPage 404',
-    image: Error404Image,
     width: 160,
     height: 107,
   },
   {
     name: 'error-403',
     usage: 'ErrorPage 403',
-    image: Error403Image,
     width: 160,
     height: 107,
   },
   {
     name: 'error-500',
     usage: 'ErrorPage 500',
-    image: Error500Image,
     width: 160,
     height: 107,
   },
@@ -83,9 +71,14 @@ export function IllustrationPage() {
             aria-label={theme === 'light' ? 'Light' : 'Dark'}
             className="flex flex-wrap items-end gap-6 rounded-lg border border-default bg-surface p-6 md:flex-nowrap md:justify-between"
           >
-            {ILLUSTRATIONS.map(({ name, usage, image, width, height }) => (
+            {ILLUSTRATIONS.map(({ name, usage, width, height }) => (
               <li key={name} className="flex flex-col items-center gap-2">
-                <Image src={image} alt="" width={width} height={height} />
+                <Image
+                  src={illustrations[name]}
+                  alt={name}
+                  width={width}
+                  height={height}
+                />
                 <code className="font-mono text-caption text-default">
                   {name}
                 </code>

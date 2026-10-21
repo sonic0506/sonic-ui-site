@@ -1,4 +1,4 @@
-import { Button, ErrorPage } from '@xonic0506/sonic-ui';
+import { buttonVariants, ErrorPage } from '@xonic0506/sonic-ui';
 import Link from 'next/link';
 
 // Next 기본 404는 레이어 밖 <style>body{background:#fff}</style>를 넣고, cacheComponents의 Activity가
@@ -9,10 +9,9 @@ export function NotFoundPage() {
       <ErrorPage
         status={404}
         action={
-          /* Button은 render가 <a>이면 role="button"을 붙여요. 링크로 읽히게 role을 되돌려요. */
-          <Button role="link" render={<Link href="/" />}>
+          <Link href="/" className={buttonVariants()}>
             홈으로 가기
-          </Button>
+          </Link>
         }
       />
     </main>

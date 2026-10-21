@@ -1,8 +1,6 @@
-import { Progress, Text } from '@xonic0506/sonic-ui';
+import { illustrations, Progress, Text } from '@xonic0506/sonic-ui';
 import { Bell, Calendar, Search, Settings, User } from 'lucide-react';
 import Image from 'next/image';
-
-import { EmptyImage } from '@/shared/assets';
 
 import type { FoundationSlug } from '../model/foundation-nav';
 
@@ -54,6 +52,8 @@ export function FoundationThumbnail({ slug }: { slug: FoundationSlug }) {
         </div>
       );
     case 'illustration':
-      return <Image src={EmptyImage} alt="" width={120} height={120} />;
+      return (
+        <Image src={illustrations.empty} alt="" width={120} height={120} />
+      );
   }
 }
