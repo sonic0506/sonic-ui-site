@@ -6,4 +6,4 @@ export const SITE_SECTIONS = [
 ] as const;
 
 // ponytail: sonic-ui가 package.json을 export하지 않아서 손으로 맞춰요. 버전을 올리면 같이 바꿔요.
-export const SONIC_UI_VERSION = '0.4.1';
+export const SONIC_UI_VERSION = '0.5.0';

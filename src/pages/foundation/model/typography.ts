@@ -72,9 +72,9 @@ export const TEXT_STYLES: readonly TypeSpec[] = [
 
 export const FONT_FAMILIES: readonly TypeSpec[] = [
   {
-    name: 'IBM Plex Sans',
+    name: 'IBM Plex Sans KR',
     sampleClass: 'text-body',
-    sample: 'IBM Plex Sans — 본문과 제목에 써요. 가나다 ABC',
+    sample: 'IBM Plex Sans KR — 본문과 제목에 써요. 가나다 ABC',
     value: '400 · 500 · 600',
     usage: '모든 글자의 기본',
   },

@@ -4,7 +4,7 @@
 
 - Sonic UI Site: fileKey `X5weWymEMncXZs9f7FFY8T`
 - 디자인 시스템(팀 라이브러리로 연결): fileKey `XifnZsjqJWJqFmAmrM6p3u`
-- 사이트 파일에는 로컬 변수·스타일이 없고, Core 컴포넌트는 모두 라이브러리 인스턴스예요. sonic-ui 0.4.1과 맞춰져 있어요(2026-10-21).
+- 사이트 파일에는 로컬 변수·스타일이 없고, Core 컴포넌트는 모두 라이브러리 인스턴스예요. sonic-ui 0.5.0과 맞춰져 있어요(2026-10-22).
 
 ## 페이지와 노드
 

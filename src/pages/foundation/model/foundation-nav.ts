@@ -10,7 +10,7 @@ export const FOUNDATION_PAGES = [
   {
     slug: 'typography',
     title: 'Typography',
-    description: 'IBM Plex Sans·Mono로 만든 텍스트 스타일 8개예요.',
+    description: 'IBM Plex Sans KR·Mono로 만든 텍스트 스타일 8개예요.',
   },
   {
     slug: 'spacing-radius',

@@ -17,7 +17,7 @@ export function TypographyPage() {
   return (
     <DocPage
       title="Typography"
-      description="글꼴은 IBM Plex Sans와 IBM Plex Mono 두 가지예요. 크기, 행간, 굵기, 자간을 묶은 텍스트 스타일 8개만 써요."
+      description="글꼴은 IBM Plex Sans KR와 IBM Plex Mono 두 가지예요. 크기, 행간, 굵기, 자간을 묶은 텍스트 스타일 8개만 써요."
       toc={TOC}
     >
       <DocSection
