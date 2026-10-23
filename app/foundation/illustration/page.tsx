@@ -1,1 +1,4 @@
-export { IllustrationPage as default } from '@/pages/foundation';
+export {
+  IllustrationPage as default,
+  illustrationMetadata as metadata,
+} from '@/pages/foundation';

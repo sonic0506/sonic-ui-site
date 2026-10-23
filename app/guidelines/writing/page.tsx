@@ -1,1 +1,4 @@
-export { WritingPage as default } from '@/pages/guidelines';
+export {
+  WritingPage as default,
+  writingMetadata as metadata,
+} from '@/pages/guidelines';

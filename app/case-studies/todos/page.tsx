@@ -1,1 +1,4 @@
-export { TodosPage as default } from '@/pages/case-studies';
+export {
+  TodosPage as default,
+  todosMetadata as metadata,
+} from '@/pages/case-studies';

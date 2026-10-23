@@ -5,7 +5,7 @@ export const FOUNDATION_PAGES = [
   {
     slug: 'color',
     title: 'Color',
-    description: 'Semantic 색 토큰 29개와 light·dark 값, 대비 기준이에요.',
+    description: 'Semantic 색 토큰 31개와 light·dark 값, 대비 기준이에요.',
   },
   {
     slug: 'typography',

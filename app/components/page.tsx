@@ -1,1 +1,4 @@
-export { ComponentsPage as default } from '@/pages/components';
+export {
+  ComponentsPage as default,
+  componentsMetadata as metadata,
+} from '@/pages/components';

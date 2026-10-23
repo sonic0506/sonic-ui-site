@@ -1,1 +1,4 @@
-export { DataStatesPage as default } from '@/pages/guidelines';
+export {
+  DataStatesPage as default,
+  dataStatesMetadata as metadata,
+} from '@/pages/guidelines';

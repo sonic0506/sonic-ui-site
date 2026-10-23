@@ -1,1 +1,4 @@
-export { SpacingRadiusPage as default } from '@/pages/foundation';
+export {
+  SpacingRadiusPage as default,
+  spacingRadiusMetadata as metadata,
+} from '@/pages/foundation';

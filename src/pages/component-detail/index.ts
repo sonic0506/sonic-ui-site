@@ -1,3 +1,4 @@
+export { generateMetadata } from './model/component-detail-metadata';
 export {
   ComponentDetailPage,
   generateStaticParams,

@@ -1,1 +1,4 @@
-export { MotionPage as default } from '@/pages/foundation';
+export {
+  MotionPage as default,
+  motionMetadata as metadata,
+} from '@/pages/foundation';

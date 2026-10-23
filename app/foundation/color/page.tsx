@@ -1,1 +1,4 @@
-export { ColorPage as default } from '@/pages/foundation';
+export {
+  ColorPage as default,
+  colorMetadata as metadata,
+} from '@/pages/foundation';

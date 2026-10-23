@@ -11,9 +11,21 @@ const schema = z.object({
   // 'true'면 서버(instrumentation)와 브라우저(MockStarter) 모두 MSW로 응답해요.
   // 실제 서버가 없는 동안 .env.development.local에 NEXT_PUBLIC_API_MOCKING=true를 둬요.
   NEXT_PUBLIC_API_MOCKING: z.enum(['true', 'false']).default('false'),
+  // 사이트 절대 주소(canonical, sitemap, OG). 직접 도메인을 붙이면 넣어요. 없으면 아래 Vercel 값을 써요.
+  NEXT_PUBLIC_SITE_URL: z.url().optional(),
+  // Vercel이 Next.js 프로젝트에 자동으로 넣어 주는 값이에요(도메인만, https:// 없이).
+  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().optional(),
+  // production이 아니면(preview) 검색에 잡히지 않게 robots에서 막아요.
+  NEXT_PUBLIC_VERCEL_ENV: z
+    .enum(['production', 'preview', 'development'])
+    .optional(),
 });
 
 export const env = schema.parse({
   NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
   NEXT_PUBLIC_API_MOCKING: process.env.NEXT_PUBLIC_API_MOCKING,
+  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL:
+    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+  NEXT_PUBLIC_VERCEL_ENV: process.env.NEXT_PUBLIC_VERCEL_ENV,
 });

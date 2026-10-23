@@ -1,3 +1,12 @@
+export {
+  accessibilityMetadata,
+  dataStatesMetadata,
+  guidelinesMetadata,
+  layoutMetadata,
+  principlesMetadata,
+  writingMetadata,
+} from './model/guidelines-metadata';
+export { GUIDELINES_PAGES } from './model/guidelines-nav';
 export { AccessibilityPage } from './ui/accessibility-page';
 export { DataStatesPage } from './ui/data-states-page';
 export { GuidelinesLayout } from './ui/guidelines-layout';

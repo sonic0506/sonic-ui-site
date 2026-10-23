@@ -1,1 +1,4 @@
-export { GuidelinesPage as default } from '@/pages/guidelines';
+export {
+  GuidelinesPage as default,
+  guidelinesMetadata as metadata,
+} from '@/pages/guidelines';

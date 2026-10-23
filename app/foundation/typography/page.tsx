@@ -1,1 +1,4 @@
-export { TypographyPage as default } from '@/pages/foundation';
+export {
+  TypographyPage as default,
+  typographyMetadata as metadata,
+} from '@/pages/foundation';

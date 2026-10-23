@@ -1,1 +1,4 @@
-export { AccessibilityPage as default } from '@/pages/guidelines';
+export {
+  AccessibilityPage as default,
+  accessibilityMetadata as metadata,
+} from '@/pages/guidelines';

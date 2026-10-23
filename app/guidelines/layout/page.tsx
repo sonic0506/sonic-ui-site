@@ -1,1 +1,4 @@
-export { LayoutPage as default } from '@/pages/guidelines';
+export {
+  LayoutPage as default,
+  layoutMetadata as metadata,
+} from '@/pages/guidelines';

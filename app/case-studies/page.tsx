@@ -1,1 +1,4 @@
-export { CaseStudiesPage as default } from '@/pages/case-studies';
+export {
+  CaseStudiesPage as default,
+  caseStudiesMetadata as metadata,
+} from '@/pages/case-studies';

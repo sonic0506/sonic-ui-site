@@ -1,1 +1,4 @@
-export { ApiKeysPage as default } from '@/pages/case-studies';
+export {
+  ApiKeysPage as default,
+  apiKeysMetadata as metadata,
+} from '@/pages/case-studies';
