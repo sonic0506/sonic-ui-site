@@ -65,6 +65,13 @@ export const COLOR_SECTIONS: readonly ColorSection[] = [
         swatchClass: 'bg-selected border-default',
       },
       {
+        name: 'color/bg/scrim-subtle',
+        usage: 'DataGrid 다시 불러오는 중, 이전 행 위의 연한 막',
+        light: 'gray/0 60%',
+        dark: 'gray/900 60%',
+        swatchClass: 'bg-scrim-subtle border-default',
+      },
+      {
         name: 'color/bg/inverse',
         usage: 'Tooltip, neutral Badge(solid)',
         light: 'gray/950',

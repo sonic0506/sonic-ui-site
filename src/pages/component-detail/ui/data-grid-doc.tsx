@@ -173,6 +173,19 @@ export function DataGridDoc() {
           ),
         },
         {
+          caption: 'refreshing',
+          demo: (
+            <DataGrid
+              aria-label="API 키"
+              className={GRID_CLASS}
+              rows={API_KEYS}
+              getRowId={(row) => row.id}
+              columns={SIMPLE_COLUMNS}
+              refreshing
+            />
+          ),
+        },
+        {
           caption: 'loading',
           demo: (
             <DataGrid
@@ -269,7 +282,7 @@ export function DataGridDoc() {
         {
           name: 'columns',
           values:
-            'type: text · number · date · datetime · badge(tones) · switch(onChange) · actions(actions). 공통 header · width · pinned · sortable',
+            'type: text · number · date · datetime · badge(tones) · switch(onChange) · actions(actions). 공통 header · width · minWidth · pinned · sortable',
           defaultValue: '(필수)',
         },
         { name: 'aria-label', values: '표 이름', defaultValue: '(필수)' },
@@ -296,6 +309,12 @@ export function DataGridDoc() {
         {
           name: 'loading',
           values: 'Skeleton 행 5개 + aria-busy',
+          defaultValue: 'false',
+        },
+        {
+          name: 'refreshing',
+          values:
+            '이전 행은 두고 본문 위에 bg/scrim-subtle 막 + 스피너. 누르자마자 보여요',
           defaultValue: 'false',
         },
         {
