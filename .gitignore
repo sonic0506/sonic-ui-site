@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# 이름과 예시 값만 있는 파일은 커밋해요(하네스 6절)
+!.env.example
 
 # vercel
 .vercel
