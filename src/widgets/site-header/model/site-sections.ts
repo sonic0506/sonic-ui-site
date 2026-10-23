@@ -3,6 +3,7 @@ export const SITE_SECTIONS = [
   { href: '/components', label: 'Components' },
   { href: '/guidelines', label: 'Guidelines' },
   { href: '/case-studies', label: 'Case Studies' },
+  { href: '/side-projects', label: 'Side Projects' },
 ] as const;
 
 // ponytail: sonic-ui가 package.json을 export하지 않아서 손으로 맞춰요. 버전을 올리면 같이 바꿔요.

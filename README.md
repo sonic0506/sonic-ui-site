@@ -117,7 +117,7 @@ PR과 main push마다 CI가 lint · typecheck · test · build를 실행해요.
 app/              Next 라우트 (src/pages 다시 내보내기, robots·sitemap·llms.txt)
 src/
 ├─ app/           providers, MSW, SEO
-├─ pages/         home · components · component-detail · foundation · guidelines · case-studies
+├─ pages/         home · components · component-detail · foundation · guidelines · case-studies · side-projects
 ├─ widgets/       site-header · site-sidebar · site-footer · todo-grid
 ├─ entities/      component · todo · user · theme
 └─ shared/        api · config · ui(DocPage, Stage, Do-Dont, Code Block, TOC …)

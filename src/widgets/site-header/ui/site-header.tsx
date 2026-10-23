@@ -21,17 +21,18 @@ export function SiteHeader() {
         </Link>
         <Badge>v{SONIC_UI_VERSION}</Badge>
       </div>
-      <TopNav className="hidden gap-1 md:flex" />
+      {/* 메뉴 5개가 한 줄에 들어가는 1024부터 펼쳐요. 그보다 좁으면 메뉴 버튼으로 열어요. */}
+      <TopNav className="hidden gap-1 lg:flex" />
       <div className="flex-1" />
       <div className="flex items-center gap-2">
         {/* 검색은 아직 없어요. 기능이 생기면 연결해요. */}
         <Button variant="ghost" size="icon-md" aria-label="검색">
           <Search />
         </Button>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <ThemeToggle />
         </div>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <MobileMenu />
         </div>
       </div>
