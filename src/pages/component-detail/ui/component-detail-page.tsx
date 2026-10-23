@@ -15,6 +15,7 @@ import { BadgeDoc } from './badge-doc';
 import { ButtonDoc } from './button-doc';
 import { CardDoc } from './card-doc';
 import { CheckboxDoc } from './checkbox-doc';
+import { DataGridDoc } from './data-grid-doc';
 import { DialogDoc } from './dialog-doc';
 import { EmptyStateDoc } from './empty-state-doc';
 import { ErrorPageDoc } from './error-page-doc';
@@ -25,6 +26,7 @@ import { FileListDoc } from './file-list-doc';
 import { InputDoc } from './input-doc';
 import { LinkDoc } from './link-doc';
 import { MenuDoc } from './menu-doc';
+import { PaginationDoc } from './pagination-doc';
 import { PopoverDoc } from './popover-doc';
 import { ProgressDoc } from './progress-doc';
 import { RadioGroupDoc } from './radio-group-doc';
@@ -63,6 +65,8 @@ const COMPONENT_DOCS: readonly { name: ComponentName; Doc: ComponentType }[] = [
   { name: 'Tooltip', Doc: TooltipDoc },
   { name: 'Tabs', Doc: TabsDoc },
   { name: 'Table', Doc: TableDoc },
+  { name: 'DataGrid', Doc: DataGridDoc },
+  { name: 'Pagination', Doc: PaginationDoc },
   { name: 'ToggleGroup', Doc: ToggleGroupDoc },
   { name: 'Accordion', Doc: AccordionDoc },
   { name: 'Toast', Doc: ToastDoc },

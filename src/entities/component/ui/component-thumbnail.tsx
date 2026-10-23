@@ -15,6 +15,7 @@ import {
   CardHeader,
   CardTitle,
   Checkbox,
+  DataGrid,
   EmptyState,
   ErrorState,
   Field,
@@ -23,6 +24,7 @@ import {
   illustrations,
   Input,
   Link,
+  Pagination,
   Progress,
   Radio,
   RadioGroup,
@@ -65,6 +67,13 @@ const API_KEY_ROWS = [
   { name: 'github-actions', status: '활성', requests: '3,215' },
   { name: 'local-dev', status: '만료 예정', requests: '0' },
 ] as const;
+
+// DataGrid에는 원본 값(숫자는 number)을 넣어요.
+const GRID_ROWS = [
+  { id: 'production', name: 'production', status: 'active', requests: 12480 },
+  { id: 'github', name: 'github-actions', status: 'active', requests: 3215 },
+  { id: 'local', name: 'local-dev', status: 'expiring', requests: 0 },
+];
 
 const FAQ_ITEMS = [
   {
@@ -287,6 +296,31 @@ export function ComponentThumbnail({ name }: { name: ComponentName }) {
           </TableBody>
         </Table>
       );
+    case 'DataGrid':
+      return (
+        <DataGrid
+          aria-label="API 키"
+          className="w-120"
+          rows={GRID_ROWS}
+          getRowId={(row) => row.id}
+          columns={[
+            { field: 'name', header: '이름', type: 'text', sortable: true },
+            {
+              field: 'status',
+              header: '상태',
+              type: 'badge',
+              tones: { active: 'success', expiring: 'warning' },
+              labels: { active: '활성', expiring: '만료 예정' },
+            },
+            { field: 'requests', header: '요청 수', type: 'number' },
+          ]}
+          defaultSorting={{ id: 'name', desc: false }}
+          selection={['production']}
+          onSelectionChange={noop}
+        />
+      );
+    case 'Pagination':
+      return <Pagination page={4} pageCount={20} onPageChange={noop} />;
     case 'ToggleGroup':
       return (
         <ToggleGroup defaultValue="list" aria-label="보기 방식">

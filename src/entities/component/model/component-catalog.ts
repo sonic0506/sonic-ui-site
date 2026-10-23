@@ -42,6 +42,11 @@ export const COMPONENT_GROUPS = [
     items: [
       { name: 'Tabs', description: '같은 대상의 다른 보기를 오가요.' },
       { name: 'Table', description: '여러 항목의 속성을 비교해요.' },
+      {
+        name: 'DataGrid',
+        description: '정렬, 선택, 고정, 이동이 필요한 목록이에요.',
+      },
+      { name: 'Pagination', description: '긴 목록을 페이지로 나눠요.' },
       { name: 'ToggleGroup', description: '보는 방식을 바로 바꿔요.' },
       { name: 'Accordion', description: '긴 내용을 접고 펼쳐요.' },
     ],

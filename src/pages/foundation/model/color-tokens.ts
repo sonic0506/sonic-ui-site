@@ -58,6 +58,13 @@ export const COLOR_SECTIONS: readonly ColorSection[] = [
         swatchClass: 'bg-primary-hover border-default',
       },
       {
+        name: 'color/bg/selected',
+        usage: 'DataGrid 선택된 행 (hover bg/subtle과 구분)',
+        light: 'cobalt/50 #EEF1FF',
+        dark: 'cobalt/950 #18214D',
+        swatchClass: 'bg-selected border-default',
+      },
+      {
         name: 'color/bg/inverse',
         usage: 'Tooltip, neutral Badge(solid)',
         light: 'gray/950',

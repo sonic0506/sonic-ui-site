@@ -72,6 +72,42 @@ export function TableDoc() {
             </Table>
           ),
         })),
+        {
+          caption: 'header · sort=asc',
+          demo: (
+            <Table className="w-40">
+              <TableHeader>
+                <TableRow>
+                  <TableHead sort="asc">내용</TableHead>
+                </TableRow>
+              </TableHeader>
+            </Table>
+          ),
+        },
+        {
+          caption: 'row · selected',
+          demo: (
+            <Table className="w-40">
+              <TableBody>
+                <TableRow selected>
+                  <TableCell>내용</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          ),
+        },
+        {
+          caption: 'pinned · left',
+          demo: (
+            <Table className="w-40">
+              <TableBody>
+                <TableRow>
+                  <TableCell pinned="left">내용</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          ),
+        },
       ]}
       rules={[
         {
@@ -83,8 +119,14 @@ export function TableDoc() {
           description: 'align="end"인 본문 칸은 숫자라서 mono예요.',
         },
         {
-          title: '줄무늬, hover 바탕은 쓰지 않아요',
-          description: '구분은 선 하나로 충분해요.',
+          title: '줄무늬는 쓰지 않아요',
+          description:
+            '구분은 선 하나로 충분해요. hover 바탕은 누를 수 있는 행(interactive)에만 둬요.',
+        },
+        {
+          title: '상태 관리가 필요하면 DataGrid',
+          description:
+            'sort, selected, pinned는 모양만 바꿔요. 정렬·선택·이동 상태는 DataGrid가 관리해요.',
         },
       ]}
       props={[
@@ -92,6 +134,23 @@ export function TableDoc() {
           name: 'TableHead · TableCell align',
           values: 'start · end (숫자 열은 end)',
           defaultValue: 'start',
+        },
+        {
+          name: 'TableHead sort · onSort',
+          values:
+            'asc · desc · none. onSort를 넘기면 머리글이 버튼 + aria-sort',
+          defaultValue: '—',
+        },
+        {
+          name: 'TableRow selected · interactive · dragging',
+          values:
+            '선택 bg/selected, hover bg/subtle(interactive), 이동 중 모양',
+          defaultValue: 'false',
+        },
+        {
+          name: 'TableHead · TableCell pinned',
+          values: 'left · right. 가로 스크롤 중에도 붙어 있어요',
+          defaultValue: '—',
         },
         {
           name: 'Table',

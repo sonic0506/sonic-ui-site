@@ -43,6 +43,11 @@ const PROPS = [
     defaultValue: 'false',
   },
   {
+    name: 'focusableWhenDisabled',
+    values: 'boolean. 비활성이 돼도 포커스 유지 (aria-disabled)',
+    defaultValue: 'false',
+  },
+  {
     name: 'aria-label',
     values: 'icon 크기일 때 필수 (타입으로 강제)',
     defaultValue: '—',
