@@ -5,7 +5,7 @@ import Link from 'next/link';
 // 지나간 페이지를 숨긴 채 남겨서 그 스타일이 다른 페이지까지 새어요. 그래서 404를 직접 그려요.
 export function NotFoundPage() {
   return (
-    <main className="flex flex-1 items-center justify-center">
+    <main className="flex flex-1 items-center justify-center px-4">
       <ErrorPage
         status={404}
         action={

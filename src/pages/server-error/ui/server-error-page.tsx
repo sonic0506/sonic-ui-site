@@ -11,7 +11,7 @@ interface ServerErrorPageProps {
 // Figma Errors · 500(69:519). 에러 내용은 Next가 서버 로그에 남기고, 화면에는 상태별 기본 문구만 보여요.
 export function ServerErrorPage({ retry }: ServerErrorPageProps) {
   return (
-    <main className="flex flex-1 items-center justify-center">
+    <main className="flex flex-1 items-center justify-center px-4">
       <ErrorPage
         status={500}
         action={
