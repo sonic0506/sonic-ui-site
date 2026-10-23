@@ -6,10 +6,14 @@ import {
   TableHeader,
   TableRow,
 } from '@xonic0506/sonic-ui';
+import type { ReactNode } from 'react';
 
 import { DocPage, IndexCard } from '@/shared/ui';
 
-import { CASE_STUDY_PAGES } from '../model/case-studies-nav';
+import {
+  CASE_STUDY_PAGES,
+  type CaseStudySlug,
+} from '../model/case-studies-nav';
 
 const THUMBNAIL_ROWS = [
   { name: 'production', status: '활성', requests: '12,480' },
@@ -43,6 +47,45 @@ function ApiKeysThumbnail() {
   );
 }
 
+const TODO_THUMBNAIL_ROWS = [
+  { id: 1, title: 'delectus aut autem' },
+  { id: 2, title: 'quis ut nam facilis et officia qui' },
+  { id: 3, title: 'fugiat veniam minus' },
+] as const;
+
+// 할 일 표의 위쪽 3행이에요(Figma 썸네일).
+function TodosThumbnail() {
+  return (
+    <div className="w-120 shrink-0">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead align="end" sort="asc">
+              ID
+            </TableHead>
+            <TableHead>제목</TableHead>
+            <TableHead>사용자</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {TODO_THUMBNAIL_ROWS.map(({ id, title }) => (
+            <TableRow key={id}>
+              <TableCell align="end">{id}</TableCell>
+              <TableCell>{title}</TableCell>
+              <TableCell>Leanne Graham</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+const THUMBNAILS: Record<CaseStudySlug, ReactNode> = {
+  'api-keys': <ApiKeysThumbnail />,
+  todos: <TodosThumbnail />,
+};
+
 export function CaseStudiesPage() {
   return (
     <DocPage
@@ -56,7 +99,7 @@ export function CaseStudiesPage() {
             href={`/case-studies/${slug}`}
             title={title}
             description={description}
-            thumbnail={<ApiKeysThumbnail />}
+            thumbnail={THUMBNAILS[slug]}
             hasMobileThumbnail
           />
         ))}
