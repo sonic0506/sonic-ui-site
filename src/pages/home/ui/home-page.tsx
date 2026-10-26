@@ -115,7 +115,7 @@ export function HomePage() {
             규칙의 기초부터 실제 화면에 적용한 사례까지 네 갈래로 정리했어요.
           </p>
         </div>
-        <div className="grid items-start gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {SECTIONS.map((section) => (
             <IndexCard key={section.href} hasMobileThumbnail {...section} />
           ))}

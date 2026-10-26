@@ -92,7 +92,7 @@ export function CaseStudiesPage() {
       title="Case Studies"
       description="규칙을 실제 화면에 적용한 사례와 그때 내린 결정이에요. 실제 프로젝트를 만들면서 하나씩 늘려요."
     >
-      <div className="grid items-start gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         {CASE_STUDY_PAGES.map(({ slug, title, description }) => (
           <IndexCard
             key={slug}

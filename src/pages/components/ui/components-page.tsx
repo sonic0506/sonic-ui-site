@@ -14,7 +14,7 @@ export function ComponentsPage() {
       {COMPONENT_GROUPS.map(({ title, items }) => (
         <section key={title} className="flex flex-col gap-4">
           <h2 className="text-title">{title}</h2>
-          <div className="grid items-start gap-x-6 gap-y-4 md:grid-cols-2">
+          <div className="grid gap-x-6 gap-y-4 md:grid-cols-2">
             {items.map(({ name, description }) => (
               <IndexCard
                 key={name}
