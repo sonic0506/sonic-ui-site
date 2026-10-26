@@ -6,6 +6,7 @@ import {
   SIDE_PROJECTS,
   type SideProject,
 } from '../model/side-projects';
+import { SonicHarnessBeDetail } from './sonic-harness-be-detail';
 import { SonicHarnessFeDetail } from './sonic-harness-fe-detail';
 import { SonicUiDetail } from './sonic-ui-detail';
 import { SonicUiSiteDetail } from './sonic-ui-site-detail';
@@ -17,6 +18,7 @@ const PROJECT_DETAILS: Record<
 > = {
   'sonic-ui': SonicUiDetail,
   'sonic-harness-fe': SonicHarnessFeDetail,
+  'sonic-harness-be': SonicHarnessBeDetail,
   'sonic-ui-site': SonicUiSiteDetail,
 };
 

@@ -1,6 +1,7 @@
 import type { StaticImageData } from 'next/image';
 
 import {
+  SonicHarnessBeThumbnailImage,
   SonicHarnessFeThumbnailImage,
   SonicUiSiteThumbnailImage,
   SonicUiThumbnailImage,
@@ -48,6 +49,17 @@ export const SIDE_PROJECTS: readonly SideProject[] = [
       { kind: 'github', href: 'https://github.com/sonic0506/sonic-harness-fe' },
     ],
     stack: ['Claude Code', 'ESLint', 'Prettier', 'TypeScript', 'Node.js'],
+  },
+  {
+    slug: 'sonic-harness-be',
+    name: 'Sonic Harness BE',
+    description:
+      'NestJS + TypeScript 코딩 규칙을 글이 아니라 도구로 지키게 하는 Claude Code 플러그인이에요. Sonic Harness FE의 백엔드판이에요.',
+    thumbnail: SonicHarnessBeThumbnailImage,
+    links: [
+      { kind: 'github', href: 'https://github.com/sonic0506/sonic-harness-be' },
+    ],
+    stack: ['Claude Code', 'NestJS', 'TypeORM', 'PostgreSQL', 'ESLint'],
   },
   {
     slug: 'sonic-ui-site',
